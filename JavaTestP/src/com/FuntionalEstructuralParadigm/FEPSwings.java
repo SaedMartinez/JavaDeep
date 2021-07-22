@@ -1,5 +1,4 @@
 package com.FuntionalEstructuralParadigm;
-
 import javax.swing.*;
 import java.awt.event.*;
 
