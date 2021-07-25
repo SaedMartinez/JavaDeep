@@ -1,5 +1,4 @@
 package com.ProjectCoca;
-
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -10,6 +9,7 @@ public class Login extends JFrame implements ActionListener {
     private JTextField usinput;
     private JLabel uslabel, rglabel, piclabel, lglabel;
     private JButton inbutton;
+    public static String inputed;
 
     public Login() {
         setLayout(null);
@@ -57,11 +57,17 @@ public class Login extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == inbutton) {
-            wtscreeni = new termScreenw();
-            wtscreeni.setBounds(0, 0, 600, 450);
-            wtscreeni.setVisible(true);
-            wtscreeni.setResizable(false);
-            wtscreeni.setLocationRelativeTo(null);
+            inputed = usinput.getText().trim();
+            if (inputed.equals("")) {
+                JOptionPane.showMessageDialog(null, "Invalid Name or too short");
+            } else {
+                wtscreeni = new termScreenw();
+                wtscreeni.setBounds(0, 0, 600, 450);
+                wtscreeni.setVisible(true);
+                wtscreeni.setResizable(false);
+                wtscreeni.setLocationRelativeTo(null);
+                this.setVisible(false);
+            }
         }
     }
 
