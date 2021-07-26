@@ -13,6 +13,7 @@ public class Login extends JFrame implements ActionListener {
 
     public Login() {
         setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Welcome");
         getContentPane().setBackground(new Color(255, 0, 0));
         setIconImage(new ImageIcon(getClass().getResource("../../img/icon.png")).getImage());

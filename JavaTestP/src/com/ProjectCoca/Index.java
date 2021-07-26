@@ -21,6 +21,7 @@ public class Index extends JFrame implements ActionListener {
 
     public Index() {
         setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         Login instance = new Login();
         lname = instance.inputed;
         setTitle("Vacation app - " + lname);

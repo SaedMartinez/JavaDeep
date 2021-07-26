@@ -15,6 +15,7 @@ public class termScreenw extends JFrame implements ActionListener, ChangeListene
 
     public termScreenw() {
         setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Terms and conditions");
         setIconImage(new ImageIcon(getClass().getResource("../../img/icon.png")).getImage());
         Login instance = new Login();
