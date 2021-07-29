@@ -1,4 +1,4 @@
-package com.PooCurse.MatrixSum;
+package com.PooCurse.Advanced;
 
 //Casting from double to int
 

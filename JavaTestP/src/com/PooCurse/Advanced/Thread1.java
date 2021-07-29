@@ -1,4 +1,4 @@
-package com.PooCurse.MatrixSum;
+package com.PooCurse.Advanced;
 
 public class Thread1 extends Thread{
     
