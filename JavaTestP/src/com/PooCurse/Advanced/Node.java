@@ -1,6 +1,8 @@
 package com.PooCurse.Advanced;
 
 public class Node {
-    char information;
+    int information;
+    char informationC;
     Node nextN;
 }
+

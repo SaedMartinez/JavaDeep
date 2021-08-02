@@ -22,7 +22,7 @@ public class PileList {
 
     public char GetNode(){
         if (LastNode != null) {
-            char GetNodeInfo = LastNode.information;
+            char GetNodeInfo = LastNode.informationC;
             LastNode=LastNode.nextN;
             return GetNodeInfo;
         } else {
