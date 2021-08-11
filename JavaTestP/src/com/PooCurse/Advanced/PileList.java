@@ -3,14 +3,13 @@ package com.PooCurse.Advanced;
 public class PileList {
     private Node LastNode;
 
-
     public PileList(){
         LastNode=null;
     }
 
     public void InNode(char FromString){
         Node TempNode = new Node();
-        TempNode.information=FromString;
+        TempNode.informationC=FromString;
         if(LastNode == null){
             TempNode.nextN=null;
             LastNode=TempNode;
