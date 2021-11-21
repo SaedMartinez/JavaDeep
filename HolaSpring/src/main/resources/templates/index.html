@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Index with Spring Boot</title>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<header th:replace="layout/plantilla :: header" ></header>
+	<br>
+	
+	<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/agregar}">[[#{list.create}]]</a>
+	<div th:if="${listado != null and !listado.empty}">
+		<table>
+			<tr>
+				<th>[[#{list.name}]]</th>
+				<th>[[#{list.lname}]]</th>
+				<th>[[#{list.phonenum}]]</th>
+				<th sec:authorize="hasRole('ROLE_ADMIN')">[[#{list.actions}]]</th>
+			</tr>
+			<tr th:each="tempV : ${listado}">
+				<td th:text="${tempV.nombre}">Mostrar Nombre</td>
+				<td th:text="${tempV.apellido}">Mostrar Apellido</td>
+				<td th:text="${tempV.telefono}">Mostrar Telef</td>
+				<td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editar/} + ${tempV.id}" th:text="#{list.action1}"></a> <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/eliminar(id=${tempV.id})}" th:text="#{list.action2}"></a></td>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${listado == null or listado.empty}">
+	[[#{list.empty}]]
+	</div>
+
+
+	<header th:replace="layout/plantilla :: footer" ></header>
+</body>
+</html>
